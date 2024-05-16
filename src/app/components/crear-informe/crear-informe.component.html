@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">CREAR INFORME</span>
+                    <form class="mt-3" [formGroup]="informeForm" (ngSubmit)="agregarInforme()">
+                        <div class="mb-3">
+                            <input type="number" formControlName="a_o"
+                                class="form-control form-control-lg" placeholder="Año">
+                            <div class="text-danger"
+                            *ngIf="informeForm.get('a_o')?.hasError('required') && informeForm.get('a_o')?.touched">
+                                <span>El año <strong>es olbigatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="cod_territorio"
+                                class="form-control form-control-lg" placeholder="Código Territorio">
+                                <div class="text-danger"
+                            *ngIf="informeForm.get('cod_territorio')?.hasError('required') && informeForm.get('cod_territorio')?.touched">
+                                <span>El codigo del territorio <strong>es olbigatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="nom_territorio"
+                                class="form-control form-control-lg" placeholder="Nombre Territorio">
+                                <div class="text-danger"
+                            *ngIf="informeForm.get('nom_territorio')?.hasError('required') && informeForm.get('nom_territorio')?.touched">
+                                <span>El nombre del territorio <strong>es olbigatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="cantidad_dosis_aplicadas"
+                                class="form-control form-control-lg" placeholder="Cantidad de Dosis Aplicadas">
+                                <div class="text-danger"
+                            *ngIf="informeForm.get('cantidad_dosis_aplicadas')?.hasError('required') && informeForm.get('cantidad_dosis_aplicadas')?.touched">
+                                <span>La cantidad de dosis <strong>es olbigatoria</strong></span>
+                            </div>
+                        </div>
+                        <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                        <button type="submit" [disabled]="informeForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
