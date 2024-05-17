@@ -5,7 +5,7 @@
                 <div class="card-body text-center">
                     <span class="titulo">INFORME DATOS COVID 19</span>
                     <button class="btn btn-success float-end" routerLink="/crear-informe">NUEVO</button>
-                    <table class="table table-striped mt-3">
+                    <table *ngIf="listInformes.length > 0" class="table table-striped mt-3">
                       <thead>
                         <tr>
                           <th scope="col">Año</th>
@@ -16,28 +16,19 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>2021</td>
-                          <td>23</td>
-                          <td>Córdoba</td>
-                          <td>6</td>
+                        <tr *ngFor="let informe of listInformes">
+                          <td>{{ informe.a_o }}</td>
+                          <td>{{ informe.cod_territorio }}</td>
+                          <td>{{ informe.nom_territorio }}</td>
+                          <td>{{ informe.cantidad_dosis_aplicadas }}</td>
                           <td>
-                            <i class="fa-regular fa-pen-to-square text-primary"></i>
-                            <i class="fa-solid fa-trash text-danger"></i>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2021</td>
-                          <td>70</td>
-                          <td>Sucre</td>
-                          <td>12</td>
-                          <td>
-                            <i class="fa-regular fa-pen-to-square text-primary"></i>
-                            <i class="fa-solid fa-trash text-danger"></i>
+                            <i [routerLink]="['/editar-informe', informe._id]" class="fa-regular fa-pen-to-square text-primary"></i>
+                            <i (click)="eliminarInforme(informe._id)" class="fa-solid fa-trash text-danger"></i>
                           </td>
                         </tr>
                       </tbody>
                     </table>
+                    <h5 style="text-align: start; margin-top: 10px;" *ngIf="listInformes.length == 0">No hay informes para mostrar</h5>
                 </div>
             </div>
         </div>
