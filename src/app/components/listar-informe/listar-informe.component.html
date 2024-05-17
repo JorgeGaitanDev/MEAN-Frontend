@@ -8,19 +8,23 @@
                     <table *ngIf="listInformes.length > 0" class="table table-striped mt-3">
                       <thead>
                         <tr>
+                          <th scope="col">Fecha de Aplicacion</th>
                           <th scope="col">Año</th>
                           <th scope="col">Codigo de Territorio</th>
                           <th scope="col">Nombre de Territorio</th>
                           <th scope="col">Cantidad de Dosis Aplicadas</th>
+                          <th scope="col">Fecha de Corte</th>
                           <th scope="col"></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let informe of listInformes">
+                          <td>{{ informe.fecha_aplicaci_n }}</td>
                           <td>{{ informe.a_o }}</td>
                           <td>{{ informe.cod_territorio }}</td>
                           <td>{{ informe.nom_territorio }}</td>
                           <td>{{ informe.cantidad_dosis_aplicadas }}</td>
+                          <td>{{ informe.fecha_corte }}</td>
                           <td>
                             <i [routerLink]="['/editar-informe', informe._id]" class="fa-regular fa-pen-to-square text-primary"></i>
                             <i (click)="eliminarInforme(informe._id)" class="fa-solid fa-trash text-danger"></i>

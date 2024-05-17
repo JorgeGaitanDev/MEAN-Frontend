@@ -21,10 +21,12 @@ export class CrearInformeComponent implements OnInit {
              private aRouter: ActivatedRoute) {
 
     this.informeForm = this.fb.group({
+      fecha_aplicaci_n:         ['', Validators.required],
       a_o:                      ['', Validators.required],
       cod_territorio:           ['', Validators.required],
       nom_territorio:           ['', Validators.required],
       cantidad_dosis_aplicadas: ['', Validators.required],
+      fecha_corte:              ['', Validators.required],
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
@@ -34,10 +36,12 @@ export class CrearInformeComponent implements OnInit {
 
   agregarInforme() {
     const INFORME: Informe = {
+      fecha_aplicaci_n: this.informeForm.get('fecha_aplicaci_n')?.value,
       a_o: this.informeForm.get('a_o')?.value,
       cod_territorio: this.informeForm.get('cod_territorio')?.value,
       nom_territorio: this.informeForm.get('nom_territorio')?.value,
       cantidad_dosis_aplicadas: this.informeForm.get('cantidad_dosis_aplicadas')?.value,
+      fecha_corte: this.informeForm.get('fecha_corte')?.value,
     }
 
     if (this.id !== null) {

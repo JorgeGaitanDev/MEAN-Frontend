@@ -6,19 +6,27 @@
                     <span class="titulo"> {{ titulo | uppercase }}</span>
                     <form class="mt-3" [formGroup]="informeForm" (ngSubmit)="agregarInforme()">
                         <div class="mb-3">
-                            <input type="number" formControlName="a_o"
-                                class="form-control form-control-lg" placeholder="Año">
+                            <input type="string" formControlName="fecha_aplicaci_n"
+                                class="form-control form-control-lg" placeholder="Fecha de Aplicacion">
                             <div class="text-danger"
-                            *ngIf="informeForm.get('a_o')?.hasError('required') && informeForm.get('a_o')?.touched">
-                                <span>El año <strong>es olbigatorio</strong></span>
+                            *ngIf="informeForm.get('fecha_aplicaci_n')?.hasError('required') && informeForm.get('fecha_aplicaci_n')?.touched">
+                                <span>La fecha de aplicación <strong>es obligatoria</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="number" formControlName="cod_territorio"
+                            <input type="string" formControlName="a_o"
+                                class="form-control form-control-lg" placeholder="Año">
+                            <div class="text-danger"
+                            *ngIf="informeForm.get('a_o')?.hasError('required') && informeForm.get('a_o')?.touched">
+                                <span>El año <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="string" formControlName="cod_territorio"
                                 class="form-control form-control-lg" placeholder="Código Territorio">
                                 <div class="text-danger"
                             *ngIf="informeForm.get('cod_territorio')?.hasError('required') && informeForm.get('cod_territorio')?.touched">
-                                <span>El codigo del territorio <strong>es olbigatorio</strong></span>
+                                <span>El codigo del territorio <strong>es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -26,15 +34,23 @@
                                 class="form-control form-control-lg" placeholder="Nombre Territorio">
                                 <div class="text-danger"
                             *ngIf="informeForm.get('nom_territorio')?.hasError('required') && informeForm.get('nom_territorio')?.touched">
-                                <span>El nombre del territorio <strong>es olbigatorio</strong></span>
+                                <span>El nombre del territorio <strong>es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="number" formControlName="cantidad_dosis_aplicadas"
+                            <input type="string" formControlName="cantidad_dosis_aplicadas"
                                 class="form-control form-control-lg" placeholder="Cantidad de Dosis Aplicadas">
                                 <div class="text-danger"
                             *ngIf="informeForm.get('cantidad_dosis_aplicadas')?.hasError('required') && informeForm.get('cantidad_dosis_aplicadas')?.touched">
-                                <span>La cantidad de dosis <strong>es olbigatoria</strong></span>
+                                <span>La cantidad de dosis <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="string" formControlName="fecha_corte"
+                                class="form-control form-control-lg" placeholder="Cantidad de Dosis Aplicadas">
+                                <div class="text-danger"
+                            *ngIf="informeForm.get('fecha_corte')?.hasError('required') && informeForm.get('fecha_corte')?.touched">
+                                <span>La fecha de corte <strong>es olbigatoria</strong></span>
                             </div>
                         </div>
                         <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>

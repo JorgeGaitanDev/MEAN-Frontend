@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 
-// Componentes 3
+// Componentes 
 import { AppComponent } from './app.component';
 import { CrearInformeComponent } from './components/crear-informe/crear-informe.component';
 import { ListarInformeComponent } from './components/listar-informe/listar-informe.component';
