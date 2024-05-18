@@ -13,7 +13,7 @@ Network access
 IP Address
 200.118.80.162/32
 
-npm run dev: coore nodemon
+npm run dev: corre nodemon
 npm install cors
 npm install --save-dev jest @types/jest jest-preset-angular = Jest pruebas unitarias
 npm install dotenv@8.2.0 express@4.17.1 mongoose@5.11.13: instala esas dependencias
