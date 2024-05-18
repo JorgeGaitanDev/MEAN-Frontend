@@ -1,4 +1,3 @@
-https://www.youtube.com/watch?v=aLbDBaFYoLY&t=3086s
 version de node: 12.0.0
 version de Angular: 11.0.1
 version de bootstrap: 5.0.0
@@ -10,7 +9,7 @@ DB_MONGO=mongodb+srv://jorge:12345@cluster0.hkjxosf.mongodb.net/meaninforme
 user: jorge
 password: 12345
 descargar mongodb compass minuto 1:09:00
-Network access 
+Network access
 IP Address
 200.118.80.162/32
 
@@ -39,4 +38,3 @@ Shift + Alt + A = cierra lienas en js /* */
 8. Vamos a crear un componente con este coamndo abrinedo otra terminal de bash para no cerrar el localhost de angular
 8.1. En la terminal escribimos g = generate y c = componente "ng g c components/crear-dato-covid" "crear producto" y se crean las carpetas en components css, html, spec.ts y ts
 
- 
